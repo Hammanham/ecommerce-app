@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopSmart | Premium Online Shopping Experience</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for better icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top announcement bar -->
+    <div class="announcement-bar">
+        <div class="container">
+            <p><i class="fas fa-truck"></i> FREE SHIPPING ON ALL ORDERS OVER $50</p>
+        </div>
+    </div>
+
+    <!-- Header with navigation -->
+    <header>
+        <div class="container">
+            <div class="header-wrapper">
+                <div class="logo-container">
+                    <h1 class="logo">Shop<span>Smart</span></h1>
+                </div>
+                
+                <div class="search-container">
+                    <form class="search-form">
+                        <input type="text" placeholder="Search for products..." class="search-input">
+                        <button type="submit" class="search-button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="header-actions">
+                    <div class="action-item">
+                        <i class="fas fa-user"></i>
+                        <span>Account</span>
+                    </div>
+                    <div class="action-item">
+                        <i class="fas fa-heart"></i>
+                        <span>Wishlist</span>
+                    </div>
+                    <div class="action-item cart-icon" id="cart-icon">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count" id="cart-count">0</span>
+                        </div>
+                        <span>Cart</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation menu -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-items">
+                <li class="nav-item active"><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#"><i class="fas fa-th-large"></i> Categories <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <div class="category-column">
+                            <h4>Electronics</h4>
+                            <ul>
+                                <li><a href="#">Smartphones</a></li>
+                                <li><a href="#">Laptops</a></li>
+                                <li><a href="#">Audio Devices</a></li>
+                                <li><a href="#">Wearables</a></li>
+                            </ul>
+                        </div>
+                        <div class="category-column">
+                            <h4>Fashion</h4>
+                            <ul>
+                                <li><a href="#">Men's Clothing</a></li>
+                                <li><a href="#">Women's Clothing</a></li>
+                                <li><a href="#">Accessories</a></li>
+                                <li><a href="#">Footwear</a></li>
+                            </ul>
+                        </div>
+                        <div class="category-column">
+                            <h4>Home & Living</h4>
+                            <ul>
+                                <li><a href="#">Furniture</a></li>
+                                <li><a href="#">Kitchen</a></li>
+                                <li><a href="#">Decor</a></li>
+                                <li><a href="#">Appliances</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="#"><i class="fas fa-percentage"></i> Deals</a></li>
+                <li class="nav-item"><a href="#"><i class="fas fa-star"></i> New Arrivals</a></li>
+                <li class="nav-item"><a href="#"><i class="fas fa-headset"></i> Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero banner section -->
+    <section class="hero-banner">
+        <div class="container">
+            <div class="banner-content">
+                <h2>Summer Sale</h2>
+                <p>Up to 50% off on selected electronics</p>
+                <button class="cta-button">Shop Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured categories -->
+    <section class="featured-categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Categories</h2>
+                <p>Browse our top categories</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Smartphones</h3>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>Laptops</h3>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-headphones"></i>
+                    </div>
+                    <h3>Audio</h3>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Wearables</h3>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-volume-up"></i>
+                    </div>
+                    <h3>Speakers</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main product section -->
+    <main class="container">
+        <section class="products-section">
+            <div class="section-header">
+                <h2>Popular Products</h2>
+                <p>Check out our bestsellers</p>
+                <div class="filter-options">
+                    <select class="filter-dropdown">
+                        <option value="default">Sort By: Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="newest">Newest First</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="products-container" id="products-container">
+                <!-- Added actual product cards instead of loading spinner -->
+                <div class="product-card">
+                    <div class="product-badge">New</div>
+                    <div class="product-buttons">
+                        <button class="product-button wishlist"><i class="far fa-heart"></i></button>
+                        <button class="product-button quick-view"><i class="far fa-eye"></i></button>
+                    </div>
+                    <div class="product-image">
+                        <img src="images\smartphone image 181.jpg" alt="Premium Smartphone" onerror="this.src='https://via.placeholder.com/300x300?text=Smartphone'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Smartphones</div>
+                        <h3 class="product-name">Premium Smartphone X12</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="product-price">$899.99</div>
+                        <p class="product-description">The latest model with advanced camera, long-lasting battery and brilliant display.</p>
+                        <button class="add-to-cart-btn" data-id="1" data-name="Premium Smartphone X12" data-price="899.99" data-image="images/smartphone.jpg">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-badge sale">Sale</div>
+                    <div class="product-buttons">
+                        <button class="product-button wishlist"><i class="far fa-heart"></i></button>
+                        <button class="product-button quick-view"><i class="far fa-eye"></i></button>
+                    </div>
+                    <div class="product-image">
+                        <img src="images\laptop 208.jpg" alt="Ultrabook Pro" onerror="this.src='https://via.placeholder.com/300x300?text=Laptop'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Laptops</div>
+                        <h3 class="product-name">Ultrabook Pro 15"</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="product-price"><span class="old-price">$1499.99</span> $1299.99</div>
+                        <p class="product-description">Powerful processor, 16GB RAM, 512GB SSD, and stunning 4K display.</p>
+                        <button class="add-to-cart-btn" data-id="2" data-name="Ultrabook Pro 15" data-price="1299.99" data-image="images/laptop.jpg">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-buttons">
+                        <button class="product-button wishlist"><i class="far fa-heart"></i></button>
+                        <button class="product-button quick-view"><i class="far fa-eye"></i></button>
+                    </div>
+                    <div class="product-image">
+                        <img src="images\headphones jbl 234.webp" alt="Wireless Headphones" onerror="this.src='https://via.placeholder.com/300x300?text=Headphones'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Audio</div>
+                        <h3 class="product-name">Premium Wireless Headphones</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <div class="product-price">$249.99</div>
+                        <p class="product-description">Noise cancellation, 30-hour battery life, and exceptional sound quality.</p>
+                        <button class="add-to-cart-btn" data-id="3" data-name="Premium Wireless Headphones" data-price="249.99" data-image="images/headphones.jpg">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-badge hot">Hot</div>
+                    <div class="product-buttons">
+                        <button class="product-button wishlist"><i class="far fa-heart"></i></button>
+                        <button class="product-button quick-view"><i class="far fa-eye"></i></button>
+                    </div>
+                    <div class="product-image">
+                        <img src="images\smartwatch 261.jpg" alt="Smart Watch" onerror="this.src='https://via.placeholder.com/300x300?text=Smartwatch'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Wearables</div>
+                        <h3 class="product-name">Elite Smart Watch</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="product-price">$329.99</div>
+                        <p class="product-description">Health monitoring, GPS, water-resistant, and 7-day battery life.</p>
+                        <button class="add-to-cart-btn" data-id="4" data-name="Elite Smart Watch" data-price="329.99" data-image="images/smartwatch.jpg">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-buttons">
+                        <button class="product-button wishlist"><i class="far fa-heart"></i></button>
+                        <button class="product-button quick-view"><i class="far fa-eye"></i></button>
+                    </div>
+                    <div class="product-image">
+                        <img src="images\Bluetooth speaker 287.jpg" alt="Bluetooth Speaker" onerror="this.src='https://via.placeholder.com/300x300?text=Speaker'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Speakers</div>
+                        <h3 class="product-name">Portable Bluetooth Speaker</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <div class="product-price">$129.99</div>
+                        <p class="product-description">Waterproof, 20-hour playtime, and 360° immersive sound.</p>
+                        <button class="add-to-cart-btn" data-id="5" data-name="Portable Bluetooth Speaker" data-price="129.99" data-image="images/bluetooth-speaker.jpg">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-badge sale">Sale</div>
+                    <div class="product-buttons">
+                        <button class="product-button wishlist"><i class="far fa-heart"></i></button>
+                        <button class="product-button quick-view"><i class="far fa-eye"></i></button>
+                    </div>
+                    <div class="product-image">
+                        <img src="images\tablet images 314.jpg" alt="Premium Tablet" onerror="this.src='https://via.placeholder.com/300x300?text=Tablet'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Tablets</div>
+                        <h3 class="product-name">Premium Tablet Pro</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="product-price"><span class="old-price">$799.99</span> $699.99</div>
+                        <p class="product-description">10.5" display, powerful processor, and all-day battery life.</p>
+                        <button class="add-to-cart-btn" data-id="6" data-name="Premium Tablet Pro" data-price="699.99" data-image="images/tablet.jpg">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-buttons">
+                        <button class="product-button wishlist"><i class="far fa-heart"></i></button>
+                        <button class="product-button quick-view"><i class="far fa-eye"></i></button>
+                    </div>
+                    <div class="product-image">
+                        <img src="images\camera 340.webp" alt="Digital Camera" onerror="this.src='https://via.placeholder.com/300x300?text=Camera'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Cameras</div>
+                        <h3 class="product-name">Professional Digital Camera</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="product-price">$1499.99</div>
+                        <p class="product-description">24.2MP sensor, 4K video recording, and advanced autofocus system.</p>
+                        <button class="add-to-cart-btn" data-id="7" data-name="Professional Digital Camera" data-price="1499.99" data-image="images/camera.jpg">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-badge new">New</div>
+                    <div class="product-buttons">
+                        <button class="product-button wishlist"><i class="far fa-heart"></i></button>
+                        <button class="product-button quick-view"><i class="far fa-eye"></i></button>
+                    </div>
+                    <div class="product-image">
+                        <img src="images\gaming console 367.jpg" alt="Gaming Console" onerror="this.src='https://via.placeholder.com/300x300?text=Gaming+Console'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Gaming</div>
+                        <h3 class="product-name">Next-Gen Gaming Console</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="product-price">$499.99</div>
+                        <p class="product-description">8K gaming, ray tracing, ultra-fast SSD, and immersive controller.</p>
+                        <button class="add-to-cart-btn" data-id="8" data-name="Next-Gen Gaming Console" data-price="499.99" data-image="images/gaming-console.jpg">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features section -->
+        <section class="features-section">
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-truck"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>Free Shipping</h3>
+                    <p>On all orders over $50</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-undo"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>Easy Returns</h3>
+                    <p>30-day return policy</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>Secure Payment</h3>
+                    <p>100% secure checkout</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>24/7 Support</h3>
+                    <p>Dedicated support team</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Newsletter section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Join Our Newsletter</h2>
+                <p>Subscribe to receive updates, access to exclusive deals, and more.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 class="footer-logo">Shop<span>Smart</span></h3>
+                    <p class="footer-description">
+                        Your one-stop shop for the best electronic products. We offer quality products at the best prices.
+                    </p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Customer Service</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Payment Methods</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Commerce St, City, Country</li>
+                        <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+                        <li><i class="fas fa-envelope"></i> support@shopsmart.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="payment-methods">
+                    <span>We Accept:</span>
+                    <img src="images/visa.png" alt="Visa" onerror="this.src='https://via.placeholder.com/50x30?text=Visa'">
+                    <img src="images/mastercard.png" alt="Mastercard" onerror="this.src='https://via.placeholder.com/50x30?text=Mastercard'">
+                    <img src="images/paypal.png" alt="PayPal" onerror="this.src='https://via.placeholder.com/50x30?text=PayPal'">
+                    <img src="images/american_express_card.png" alt="American Express" onerror="this.src='https://via.placeholder.com/50x30?text=AmEx'">
+                </div>
+                <p class="copyright">
+                    &copy; 2025 ShopSmart. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart sidebar -->
+    <div class="cart-container" id="cart-container">
+        <div class="cart-header">
+            <h2><i class="fas fa-shopping-cart"></i> Your Cart</h2>
+            <button class="close-cart" id="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be loaded here dynamically -->
+            <div class="empty-cart">
+                <div class="empty-cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <p>Your cart is empty</p>
+                <button class="start-shopping-btn">Start Shopping</button>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-summary">
+                <div class="summary-item">
+                    <span>Subtotal:</span>
+                    <span id="cart-subtotal">$0.00</span>
+                </div>
+                <div class="summary-item">
+                    <span>Shipping:</span>
+                    <span id="cart-shipping">$0.00</span>
+                </div>
+                <div class="summary-item total">
+                    <span>Total:</span>
+                    <span id="cart-total-price">$0.00</span>
+                </div>
+            </div>
+            <div class="cart-actions">
+                <button class="continue-shopping">Continue Shopping</button>
+                <button class="checkout-btn" id="checkout-btn">
+                    <i class="fas fa-lock"></i> Checkout Securely
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Quick view modal -->
+    <div class="quick-view-modal" id="quick-view-modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="product-quick-view">
+                <div class="product-quick-view-image">
+                    <img src="" alt="" id="modal-product-image">
+                </div>
+                <div class="product-quick-view-details">
+                    <h2 id="modal-product-name"></h2>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(24 reviews)</span>
+                    </div>
+                    <div class="product-price" id="modal-product-price"></div>
+                    <p class="product-description" id="modal-product-description"></p>
+                    <div class="product-meta">
+                        <span><strong>Availability:</strong> In Stock</span>
+                        <span><strong>Category:</strong> <a href="#">Electronics</a></span>
+                    </div>
+                    <div class="product-add-to-cart">
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" value="1" min="1" class="quantity-input">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn modal-add-to-cart" data-id="" data-name="" data-price="" data-image="">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                    <div class="product-actions">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i> Add to Wishlist</button>
+                        <button class="compare-btn"><i class="fas fa-exchange-alt"></i> Compare</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Template (hidden) -->
+    <template id="product-template">
+        <div class="product-card">
+            <div class="product-badge">New</div>
+            <div class="product-buttons">
+                <button class="product-button wishlist"><i class="far fa-heart"></i></button>
+                <button class="product-button quick-view"><i class="far fa-eye"></i></button>
+            </div>
+            <div class="product-image">
+                <img src="images\electronic 599.jpg" alt="">
+            </div>
+            <div class="product-info">
+                <div class="product-category">Electronics</div>
+                <h3 class="product-name"></h3>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="product-price"></div>
+                <p class="product-description"></p>
+                <button class="add-to-cart-btn">
+                    <i class="fas fa-cart-plus"></i> Add to Cart
+                </button>
+            </div>
+        </div>
+    </template>
+
+   <!-- Cart Item Template (hidden) -->
+<template id="cart-item-template">
+    <div class="cart-item">
+        <div class="cart-item-image">
+            <img src="images" alt="">
+        </div>
+        <div class="cart-item-details">
+            <h4 class="cart-item-name"></h4>
+            <div class="cart-item-price"></div>
+            <div class="cart-item-quantity">
+                <button class="quantity-btn decrease-quantity">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn increase-quantity">+</button>
+            </div>
+        </div>
+        <button class="remove-item"><i class="fas fa-trash-alt"></i></button>
+    </div>
+</template>
+
+<!-- Success notification -->
+<div class="notification" id="notification">
+    <div class="notification-content">
+        <i class="fas fa-check-circle"></i>
+        <span id="notification-message">Item added to cart!</span>
+    </div>
+</div>
+
+<!-- Add JavaScript to handle cart functionality -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Cart functionality
+        const cartIcon = document.getElementById('cart-icon');
+        const cartContainer = document.getElementById('cart-container');
+        const closeCart = document.getElementById('close-cart');
+        const overlay = document.getElementById('overlay');
+        const cartItems = document.getElementById('cart-items');
+        const cartCount = document.getElementById('cart-count');
+        const cartSubtotal = document.getElementById('cart-subtotal');
+        const cartShipping = document.getElementById('cart-shipping');
+        const cartTotal = document.getElementById('cart-total-price');
+        const notification = document.getElementById('notification');
+        const cartItemTemplate = document.getElementById('cart-item-template');
+        
+        // Quick view modal functionality
+        const quickViewModal = document.getElementById('quick-view-modal');
+        const modalProductImage = document.getElementById('modal-product-image');
+        const modalProductName = document.getElementById('modal-product-name');
+        const modalProductPrice = document.getElementById('modal-product-price');
+        const modalProductDescription = document.getElementById('modal-product-description');
+        const modalAddToCartBtn = document.querySelector('.modal-add-to-cart');
+        const closeModal = document.querySelector('.close-modal');
+        
+        // Cart data
+        let cart = [];
+        
+        // Toggle cart sidebar
+        cartIcon.addEventListener('click', function() {
+            cartContainer.classList.add('active');
+            overlay.classList.add('active');
+        });
+        
+        closeCart.addEventListener('click', function() {
+            cartContainer.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+        
+        overlay.addEventListener('click', function() {
+            cartContainer.classList.remove('active');
+            quickViewModal.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+        
+        // Add to cart functionality
+        const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const productId = this.getAttribute('data-id');
+                const productName = this.getAttribute('data-name');
+                const productPrice = parseFloat(this.getAttribute('data-price'));
+                const productImage = this.getAttribute('data-image');
+                
+                // Check if product already in cart
+                const existingItem = cart.find(item => item.id === productId);
+                
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({
+                        id: productId,
+                        name: productName,
+                        price: productPrice,
+                        image: productImage,
+                        quantity: 1
+                    });
+                }
+                
+                // Update cart UI
+                updateCart();
+                
+                // Show notification
+                showNotification(`${productName} added to cart!`);
+            });
+        });
+        
+        // Quick view functionality
+        const quickViewButtons = document.querySelectorAll('.quick-view');
+        quickViewButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const productCard = this.closest('.product-card');
+                const productImage = productCard.querySelector('.product-image img').src;
+                const productName = productCard.querySelector('.product-name').textContent;
+                const productPrice = productCard.querySelector('.product-price').textContent;
+                const productDescription = productCard.querySelector('.product-description').textContent;
+                const dataId = productCard.querySelector('.add-to-cart-btn').getAttribute('data-id');
+                
+                // Set modal values
+                modalProductImage.src = productImage;
+                modalProductName.textContent = productName;
+                modalProductPrice.textContent = productPrice;
+                modalProductDescription.textContent = productDescription;
+                
+                // Set data attributes for the add to cart button in modal
+                modalAddToCartBtn.setAttribute('data-id', dataId);
+                modalAddToCartBtn.setAttribute('data-name', productName);
+                modalAddToCartBtn.setAttribute('data-price', productPrice.replace('$', ''));
+                modalAddToCartBtn.setAttribute('data-image', productImage);
+                
+                // Show modal
+                quickViewModal.classList.add('active');
+                overlay.classList.add('active');
+            });
+        });
+        
+        closeModal.addEventListener('click', function() {
+            quickViewModal.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+        
+        // Update cart UI
+        function updateCart() {
+            // Clear existing cart items
+            while (cartItems.firstChild) {
+                cartItems.removeChild(cartItems.firstChild);
+            }
+            
+            if (cart.length === 0) {
+                // Show empty cart message
+                const emptyCart = document.createElement('div');
+                emptyCart.className = 'empty-cart';
+                emptyCart.innerHTML = `
+                    <div class="empty-cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <p>Your cart is empty</p>
+                    <button class="start-shopping-btn">Start Shopping</button>
+                `;
+                cartItems.appendChild(emptyCart);
+                
+                // Reset cart counts and totals
+                cartCount.textContent = '0';
+                cartSubtotal.textContent = '$0.00';
+                cartShipping.textContent = '$0.00';
+                cartTotal.textContent = '$0.00';
+                
+                document.querySelector('.start-shopping-btn').addEventListener('click', function() {
+                    cartContainer.classList.remove('active');
+                    overlay.classList.remove('active');
+                });
+            } else {
+                // Add items to cart
+                let totalItems = 0;
+                let subtotal = 0;
+                
+                cart.forEach(item => {
+                    const cartItem = document.importNode(cartItemTemplate.content, true);
+                    
+                    // Set item values
+                    const itemImage = cartItem.querySelector('.cart-item-image img');
+                    const itemName = cartItem.querySelector('.cart-item-name');
+                    const itemPrice = cartItem.querySelector('.cart-item-price');
+                    const itemQuantity = cartItem.querySelector('.quantity-value');
+                    const decreaseBtn = cartItem.querySelector('.decrease-quantity');
+                    const increaseBtn = cartItem.querySelector('.increase-quantity');
+                    const removeBtn = cartItem.querySelector('.remove-item');
+                    
+                    itemImage.src = item.image;
+                    itemImage.onerror = function() {
+                        this.src = 'https://via.placeholder.com/80x80?text=Product';
+                    };
+                    itemName.textContent = item.name;
+                    itemPrice.textContent = `$${(item.price * item.quantity).toFixed(2)}`;
+                    itemQuantity.textContent = item.quantity;
+                    
+                    // Add data-id attribute to cart item
+                    cartItem.querySelector('.cart-item').setAttribute('data-id', item.id);
+                    
+                    // Add event listeners for quantity buttons
+                    decreaseBtn.addEventListener('click', function() {
+                        decreaseQuantity(item.id);
+                    });
+                    
+                    increaseBtn.addEventListener('click', function() {
+                        increaseQuantity(item.id);
+                    });
+                    
+                    removeBtn.addEventListener('click', function() {
+                        removeItem(item.id);
+                    });
+                    
+                    cartItems.appendChild(cartItem);
+                    
+                    // Update totals
+                    totalItems += item.quantity;
+                    subtotal += item.price * item.quantity;
+                });
+                
+                // Update cart count and totals
+                cartCount.textContent = totalItems;
+                cartSubtotal.textContent = `$${subtotal.toFixed(2)}`;
+                
+                // Calculate shipping (free over $50)
+                const shipping = subtotal >= 50 ? 0 : 5.99;
+                cartShipping.textContent = shipping === 0 ? 'FREE' : `$${shipping.toFixed(2)}`;
+                
+                // Calculate total
+                const total = subtotal + shipping;
+                cartTotal.textContent = `$${total.toFixed(2)}`;
+            }
+        }
+        
+        // Decrease item quantity
+        function decreaseQuantity(id) {
+            const itemIndex = cart.findIndex(item => item.id === id);
+            if (itemIndex !== -1) {
+                if (cart[itemIndex].quantity > 1) {
+                    cart[itemIndex].quantity -= 1;
+                } else {
+                    cart.splice(itemIndex, 1);
+                }
+                updateCart();
+            }
+        }
+        
+        // Increase item quantity
+        function increaseQuantity(id) {
+            const itemIndex = cart.findIndex(item => item.id === id);
+            if (itemIndex !== -1) {
+                cart[itemIndex].quantity += 1;
+                updateCart();
+            }
+        }
+        
+        // Remove item from cart
+        function removeItem(id) {
+            const itemIndex = cart.findIndex(item => item.id === id);
+            if (itemIndex !== -1) {
+                const removedItem = cart[itemIndex];
+                cart.splice(itemIndex, 1);
+                updateCart();
+                showNotification(`${removedItem.name} removed from cart!`);
+            }
+        }
+        
+        // Show notification
+        function showNotification(message) {
+            const notificationMessage = document.getElementById('notification-message');
+            notificationMessage.textContent = message;
+            notification.classList.add('active');
+            
+            setTimeout(function() {
+                notification.classList.remove('active');
+            }, 3000);
+        }
+        
+        // Initialize UI
+        updateCart();
+        
+        // Continue shopping button
+        document.querySelector('.continue-shopping').addEventListener('click', function() {
+            cartContainer.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+        
+        // Checkout button
+        document.getElementById('checkout-btn').addEventListener('click', function() {
+            if (cart.length > 0) {
+                alert('Proceeding to checkout...');
+                // Here you would normally redirect to the checkout page
+            } else {
+                alert('Your cart is empty. Add some products before checkout.');
+            }
+        });
+    });
+</script>
+</body>
+</html>
