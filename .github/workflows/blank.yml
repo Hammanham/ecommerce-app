@@ -1,4 +1,4 @@
-name: CI
+name: Ecommerce_app
 
 on:
   push:
