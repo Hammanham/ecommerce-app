@@ -25,5 +25,5 @@ jobs:
           run: uptime
           -name: cpu info
           run: nproc
-          -name:kernel info
+          -name: kernel info
           run: uname -r
